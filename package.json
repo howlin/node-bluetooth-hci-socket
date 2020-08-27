@@ -1,6 +1,6 @@
 {
   "name": "@howlin/bluetooth-hci-socket",
-  "version": "0.5.3-6",
+  "version": "0.5.3-7",
   "description": "Bluetooth HCI socket binding for Node.js.",
   "main": "index.js",
   "repository": {
