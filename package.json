@@ -1,11 +1,11 @@
 {
-  "name": "bluetooth-hci-socket",
-  "version": "0.5.2",
-  "description": "Bluetooth HCI socket binding for Node.js",
+  "name": "@howlin/bluetooth-hci-socket",
+  "version": "0.5.3-5-H",
+  "description": "Bluetooth HCI socket binding for Node.js.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepmistry/node-bluetooth-hci-socket.git"
+    "url": "git+https://github.com/howlin/node-bluetooth-hci-socket.git"
   },
   "keywords": [
     "HCI",
@@ -16,9 +16,9 @@
   "author": "Sandeep Mistry <sandeep.mistry@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sandeepmistry/node-bluetooth-hci-socket/issues"
+    "url": "https://github.com/howlin/node-bluetooth-hci-socket/issues"
   },
-  "homepage": "https://github.com/sandeepmistry/node-bluetooth-hci-socket",
+  "homepage": "https://github.com/howlin/node-bluetooth-hci-socket",
   "os": [
     "linux",
     "android",
@@ -26,26 +26,33 @@
     "win32"
   ],
   "dependencies": {
-    "debug": "^2.2.0",
-    "nan": "^2.0.5",
-    "node-pre-gyp": "0.6.x"
+    "debug": "^4.1.1",
+    "nan": "^2.14.0",
+    "node-pre-gyp": "^0.14.0",
+    "usb": "^1.6.2"
   },
   "optionalDependencies": {
-    "usb": "^1.1.0"
+    "usb": "^1.6.2"
   },
   "devDependencies": {
-    "jshint": "^2.8.0"
+    "jshint": "^2.11.0"
   },
   "scripts": {
-      "preinstall": "npm install node-pre-gyp",
-      "install": "node-pre-gyp install --fallback-to-build",
-      "test": "jshint lib/*.js"
+    "install": "node-pre-gyp install --fallback-to-build",
+    "test": "jshint lib/*.js && node test.js"
   },
   "binary": {
-      "module_name": "binding",
-      "module_path": "./lib/binding/",
-      "host": "https://github.com/sandeepmistry/node-bluetooth-hci-socket/releases/download/",
-      "package_name": "{module_name}-{version}-{node_abi}-{platform}-{arch}.tar.gz",
-      "remote_path": "{version}"
+    "module_name": "bluetooth_hci_socket",
+    "module_path": "./lib/binding/",
+    "host": "https://github.com/howlin/node-bluetooth-hci-socket/releases/download/",
+    "package_name": "{module_name}-{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "remote_path": "{version}"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
   }
 }

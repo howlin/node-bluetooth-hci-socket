@@ -1,3 +1,7 @@
+__NOTE:__ forked from https://github.com/noble/node-bluetooth-hci-socket and uses updates from https://github.com/abandonware/node-bluetooth-hci-socket 
+
+---
+
 # node-bluetooth-hci-socket
 
 Bluetooth HCI socket binding for Node.js
@@ -23,6 +27,8 @@ This library needs raw USB access to a Bluetooth 4.0 USB adapter, as it needs to
 A [WinUSB](https://msdn.microsoft.com/en-ca/library/windows/hardware/ff540196(v=vs.85).aspx) driver is required, use [Zadig tool](http://zadig.akeo.ie) to replace the driver for your adapter.
 
 __WARNING:__ This will make the adapter unavailable in Windows Bluetooth settings! To roll back to the original driver go to: ```Device Manager -> Open Device -> Update Driver```
+Note: 
+- that one should select "Delete the driver software for this device" as per Zadig instructions if the generation of the system restoral point by Zadig fails if one wishes to use restore system restoral point as an option.
 
 #### Compatible Bluetooth 4.0 USB Adapter's
 
@@ -31,6 +37,7 @@ __WARNING:__ This will make the adapter unavailable in Windows Bluetooth setting
 | BCM920702 Bluetooth 4.0 | 0x0a5c | 0x21e8 |
 | BCM20702A0 Bluetooth 4.0 | 0x19ff | 0x0239 |
 | BCM20702A0 Bluetooth 4.0 | 0x0489 | 0xe07a |
+| BCM20702A0 Bluetooth 4.0 | 0x413c | 0x8143 |
 | CSR8510 A10 | 0x0a12 | 0x0001 |
 | Asus BT-400 | 0x0b05 | 0x17cb |
 | Intel Wireless Bluetooth 6235 | 0x8087 | 0x07da |
@@ -38,22 +45,24 @@ __WARNING:__ This will make the adapter unavailable in Windows Bluetooth setting
 | Intel Wireless Bluetooth 7265 | 0x8087 | 0x0a2a |
 | Intel Wireless Bluetooth 8265 | 0x8087 | 0x0a2b |
 | Belkin BCM20702A0 | 0x050D | 0x065A |
+| Dell Precision 5530| 0x8087 | 0x0025 |
 
 #### Compatible Bluetooth 4.1 USB Adapter's
 | Name | USB VID | USB PID |
 |:---- | :------ | :-------|
 | BCM2045A0 Bluetooth 4.1 | 0x0a5c | 0x6412 |
+| Marvell AVASTAR | 0x1286 | 0x204C |
 
 ## Install
 
 ```sh
-npm install bluetooth-hci-socket
+npm install @howlin/bluetooth-hci-socket
 ```
 
 ## Usage
 
 ```javascript
-var BluetoothHciSocket = require('bluetooth-hci-socket');
+var BluetoothHciSocket = require('@howlin/bluetooth-hci-socket');
 ```
 
 ### Actions
@@ -159,7 +168,7 @@ bluetoothHciSocket.on('error', function(error) {
 
 ## Examples
 
-See [examples folder](https://github.com/sandeepmistry/node-bluetooth-hci-socket/blob/master/examples) for code examples.
+See [examples folder](https://github.com/howlin/node-bluetooth-hci-socket/blob/master/examples) for code examples.
 
 ## Platform Notes
 
